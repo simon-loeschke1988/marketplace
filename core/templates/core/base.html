@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang ="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+
+        <title> {% block title%} {%endblock%} | Marktplatzapp</title>
+
+    </head>
+
+    <body>
+        <!--Navigation, border-b macht eine border unten, border-gray sagt wie die Farbe zu sein hat-->
+        <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
+            <a href="/" class="text-xl font-semibold">Marktplatzapp</a>
+
+            <div class="space-x-6">
+                <!--Beim hovern wird das Item grau-->
+                <a href="#" class="text-lg font-semibold hover:text-gray-700">Item</a>
+                <a href="#" class="text-lg font-semibold hover:text-gray-700">Shop</a>
+                <!--Ein Login-Button-->
+                <a href="#" class="px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Registrieren</a>
+                <a href="#" class="px-6 py-5 bg-gray-500 text-lg text-white rounded-lg hover:bg-gray-700">Anmelden</a>
+        </nav>
+        <div class ="px-6 py-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer class="py-6 px-6 flex justify-between bg-gray-800 border-t border-gray-200">
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400"> Über das Projekt</h3>
+                <p class="text-gray-500 text-lg">Ein Beispielprojekt zum Üben von Python und TailwindCSS</p>
+            </div>
+            <div class="w-1/3">
+                <h3 class="mb-5 font-semibold text-gray-400"> Kontakt</h3>
+                <p class="text-gray-500 text-lg">Max Mustermann</p>
+                <p class="text-gray-500 text-lg">Musterstraße 1</p>
+                <p class="text-gray-500 text-lg">12345 Musterstadt</p>
+                <h3 class="py-6 mb-1 font-semibold text-gray-400"> Menü</h3>
+                <ul class="space-y-1">
+                    <li><a href="{% url 'contact' %}" class="text-gray-500 text-lg hover:text-gray-400">Kontakt</a></li>
+                    <li><a href="#" class="text-gray-500 text-lg hover:text-gray-400">Shop</a></li>
+                    <li><a href="#" class="text-gray-500 text-lg hover:text-gray-400">Registrieren</a></li>
+                    <li><a href="#" class="text-gray-500 text-lg hover:text-gray-400">Anmelden</a></li>
+                </ul>
+            </div>
+        </footer>
+            
+    </body>
+
+</html>
+
+|
