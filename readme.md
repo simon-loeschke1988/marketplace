@@ -38,4 +38,4 @@ django-admin startproject marketplace
 - eigene urls.py datei für items, ist sauberer
 
 
-bis minute 50
+bis minute 1:22_27
