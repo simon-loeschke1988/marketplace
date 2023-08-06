@@ -23,8 +23,9 @@ from django.conf.urls.static import static
 from core.views import index, contact
 
 urlpatterns = [
-    path('', index, name='index'),
+    #die core-urls einbinden
+    path('', include('core.urls')),
+    #die item-urls einbinden
     path('item/', include('item.urls')),
-    path('contact/', contact, name='contact'),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
