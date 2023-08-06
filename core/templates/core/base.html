@@ -22,7 +22,7 @@
                 <a href="#" class="text-lg font-semibold hover:text-gray-700">Item</a>
                 <a href="#" class="text-lg font-semibold hover:text-gray-700">Shop</a>
                 <!--Ein Login-Button-->
-                <a href="#" class="px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Registrieren</a>
+                <a href="{%url 'core:signup'%}" class="px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Registrieren</a>
                 <a href="#" class="px-6 py-5 bg-gray-500 text-lg text-white rounded-lg hover:bg-gray-700">Anmelden</a>
         </nav>
         <div class ="px-6 py-6">
@@ -44,7 +44,7 @@
                 <ul class="space-y-1">
                     <li><a href="{% url 'core:contact' %}" class="text-gray-500 text-lg hover:text-gray-400">Kontakt</a></li>
                     <li><a href="#" class="text-gray-500 text-lg hover:text-gray-400">Shop</a></li>
-                    <li><a href="#" class="text-gray-500 text-lg hover:text-gray-400">Registrieren</a></li>
+                    <li><a href="{%url 'core:signup'%}" class="text-gray-500 text-lg hover:text-gray-400">Registrieren</a></li>
                     <li><a href="#" class="text-gray-500 text-lg hover:text-gray-400">Anmelden</a></li>
                 </ul>
             </div>
