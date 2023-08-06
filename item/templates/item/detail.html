@@ -19,7 +19,16 @@
             <strong class="text-gray-500"> Beschreibung </strong><br>
             {{item.description}} </p>
     {% endif %}
-    <a href="#" class="px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Verkäufer kontaktieren</a>
+
+    {%if request.user == item.created_by%}
+            <div class='mt-6 p-6 bg-white rounded-xl'>
+                <p> Das ist dein Artikel </p>
+                <a href="{% url 'item:delete' item.id %}" class="inline-block px-6 py-5 bg-red-500 text-lg text-white rounded-lg hover:bg-red-700">Artikel löschen</a>
+                <a href="#" class="inline-block px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Artikel bearbeiten</a>
+            </div>
+    {%else%}
+            <a href="#" class="px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Verkäufer kontaktieren</a>
+    {% endif %}
     </div>
 </div>
 
