@@ -12,13 +12,14 @@
     </div>
     <div class="col-span-2 p-6 bg-gray-100 rounded-xl">
         <h1 class="mb-6 text-3xl"> {{item.name}}</h1>
-        <p class="text-gray-500"> <strong> Preis: </strong> {{item.price}} </p>
+        <p class="text-gray-500"> <strong> Preis: </strong> {{item.price}} € </p>
         <p class="text-gray-500"> <strong> Verkäufer: </strong> {{item.created_by.username}} </p>
     {% if item.description %}
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-9">
             <strong class="text-gray-500"> Beschreibung </strong><br>
             {{item.description}} </p>
     {% endif %}
+    <a href="#" class="px-6 py-5 bg-teal-500 text-lg text-white rounded-lg hover:bg-teal-700">Verkäufer kontaktieren</a>
     </div>
 </div>
 

@@ -13,6 +13,14 @@ def detail(request, pk):
 
 @login_required
 def new(request):
-    form = NewItemForm()
+    if request.method == 'POST':
+        form = NewItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.created_by = request.user
+            item.save()
+            return render(request, 'item/detail.html', {'item': item})
+    else:
+        form = NewItemForm()
     
     return render(request, 'item/new.html', {'form': form, 'title': 'Neuer Artikel'})
