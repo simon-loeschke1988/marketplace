@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core', # added this line to include the core app date: 05/08/2023
     'item',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
