@@ -21,3 +21,19 @@ class NewItemForm(forms.ModelForm):
             'image': forms.FileInput(attrs={
                 'class': INPUT_CLASSES}),
         }
+class EditItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['name','description','price','image','is_sold']
+        
+        # Hier eine andere Art, Formulare zu erstellen
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': INPUT_CLASSES}),
+            'description': forms.Textarea(attrs={
+                'class': INPUT_CLASSES}),
+            'price': forms.NumberInput(attrs={
+                'class': INPUT_CLASSES}),
+            'image': forms.FileInput(attrs={
+                'class': INPUT_CLASSES}),
+        }
