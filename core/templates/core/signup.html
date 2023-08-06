@@ -8,6 +8,15 @@
 
 <div class="w-1/2 my-6 mx-auto bg-gray-100 rounded-xl p-6">
     <h1 class="mb-6 text-3xl"> Nutzer registrieren </h1>
+
+
+    <form method="post" action=".">
+         {% csrf_token %}
+         {{form.as_p}}
+
+         <button class="py-4 px-8 text-lg text-white bg-teal-500 hover:bg-teal-700 rounded-xl"> Senden </button>
+
+    </form>
 </div>
 
 
