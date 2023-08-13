@@ -1,8 +1,22 @@
 from django.contrib.auth.decorators import login_required
+# Q is used to combine queries
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404,redirect
-from .models import Item
+from .models import Item, Category
 from .forms import NewItemForm, EditItemForm
 # Create your views here.
+
+def items(request):
+    items = Item.objects.filter(is_sold=False)
+    # get query from url
+    query = request.GET.get('query','')
+    category_id = request.GET.get('category', 0)
+    categories = Category.objects.all() 
+    '''Alle Kategorien werden in der Variable Categories gespeichert.'''
+    if query: # if query is not empty
+        # filter items by name or description
+        items = items.filter(Q(name__icontains=query)|Q(description__icontains=query))
+    return render(request, 'item/items.html', {'items': items, 'query': query, 'categories': categories, 'category_id': int(category_id)})
 
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
